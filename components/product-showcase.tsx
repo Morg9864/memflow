@@ -36,7 +36,7 @@ const SLIDES = [
     key: "statistiques" as const,
     index: "05",
     title: "Des progrès que tu peux voir",
-    body: "Courbes de rétention, taux de réussite, jours de série — les chiffres racontent l'histoire de ta progression semaine après semaine.",
+    body: "Courbes de rétention, taux de réussite, jours de série: les chiffres racontent l'histoire de ta progression semaine après semaine.",
   },
   {
     key: "importCsvPreview" as const,

@@ -110,7 +110,7 @@ export function Hero() {
               style={{ fontFamily: "var(--font-sans)" }}
             >
               Transforme tes cours en sessions actives en quelques secondes. MemFlow
-              programme chaque carte au bon moment — ni trop tôt, ni trop tard — pour
+              programme chaque carte au bon moment, ni trop tôt, ni trop tard, pour
               ancrer tes connaissances durablement.
             </motion.p>
 

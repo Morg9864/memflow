@@ -240,7 +240,7 @@ export function SpacedRepetition() {
           <SectionHeading
             eyebrow="Répétition espacée"
             title="Reviens juste avant d'oublier."
-            lede="MemFlow re-présente chaque carte au moment où elle est sur le point de s'effacer — pas trop tôt, jamais trop tard."
+            lede="MemFlow re-présente chaque carte au moment où elle est sur le point de s'effacer, pas trop tôt, jamais trop tard."
           />
         </FadeIn>
 

@@ -32,7 +32,7 @@ const STEPS = [
   {
     icon: FileSpreadsheet,
     title: "Importe ton CSV",
-    desc: "Avec ou sans en-tête, séparateur ; , ou tabulation — tout est accepté.",
+    desc: "Avec ou sans en-tête, séparateur ; , ou tabulation. Tout est accepté.",
   },
   {
     icon: ScanSearch,
