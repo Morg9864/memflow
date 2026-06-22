@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Lora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@/components/analytics";
+import { GAnalytics } from "@/components/analytics";
+import { Analytics } from "@vercel/analytics/next"
 import { CookieBanner } from "@/components/cookie-banner";
 
 const lora = Lora({
@@ -69,7 +70,7 @@ export default function RootLayout({
 		>
 			<body>
 				{children}
-				<Analytics />
+				<GAnalytics />
 				<CookieBanner />
 			</body>
 		</html>

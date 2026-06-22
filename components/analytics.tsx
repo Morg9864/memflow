@@ -23,7 +23,7 @@ export function loadGA() {
   window.gtag("config", GA_ID)
 }
 
-export function Analytics() {
+export function GAnalytics() {
   useEffect(() => {
     if (localStorage.getItem("memflow-cookie-consent") === "accepted") {
       loadGA()
