@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
+import { VideoSection } from "@/components/video-section";
 import { ProblemSection } from "@/components/problem-section";
 import { SolutionSection } from "@/components/solution-section";
 import { ProductShowcase } from "@/components/product-showcase";
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <main className="bg-[var(--color-cream)] text-[var(--color-ink)]">
         <Hero />
+        <VideoSection />
         <ProblemSection />
         <SolutionSection />
         <ProductShowcase />
