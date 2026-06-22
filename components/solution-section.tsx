@@ -29,7 +29,7 @@ const STEPS: Step[] = [
 		number: "02",
 		icon: Brain,
 		title: "Révise avec l'active recall",
-		body: "Six modes d'étude: QCM, vrai/faux, saisie libre, texte à trous, flashcard, audio. Pour ancrer chaque concept par l'effort de récupération.",
+		body: "Six modes d'étude: QCM, vrai/faux, saisie libre, texte à trous, flashcard, et flashcard inversée. Pour ancrer chaque concept par l'effort de récupération.",
 		iconBg: "var(--color-blush)",
 		iconColor: "var(--color-blush-deep)",
 	},
