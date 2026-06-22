@@ -151,6 +151,22 @@ def transform(js):
         '<div ref={trackRef} onMouseDown={(e) => { setDragging(true); onSeek(timeFromEvent(e)); }}',
         '<div ref={trackRef} onTouchStart={(e) => { setDragging(true); onSeek(timeFromEvent(e)); }} onMouseDown={(e) => { setDragging(true); onSeek(timeFromEvent(e)); }}',
     )
+
+    # 8 — fix logo path: assets/logo.png is relative to the composition source;
+    #     when served as an iframe from the Next.js app the resolved URL is wrong.
+    #     /logo.png is the correct absolute path (served from public/).
+    js = apply_edit(
+        js, "logo absolute path",
+        'src="assets/logo.png"',
+        'src="/logo.png"',
+    )
+
+    # 9 — landing page link should point to the app, not the marketing root
+    js = apply_edit(
+        js, "link app.memflow.one",
+        "}}>memflow.one</span>",
+        "}}>app.memflow.one</span>",
+    )
     return js
 
 
@@ -185,6 +201,8 @@ def main():
         "background: '#FFFFFF',",
         "onTouchStart=",
         "if (!hoveredRef.current) return;",
+        'src="/logo.png"',
+        "}}>app.memflow.one</span>",
     ]
     missing = [c for c in checks if c not in js2]
     if missing:
