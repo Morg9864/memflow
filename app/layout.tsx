@@ -3,6 +3,7 @@ import { Lora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { GAnalytics } from "@/components/analytics";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { CookieBanner } from "@/components/cookie-banner";
 
 const lora = Lora({
