@@ -155,7 +155,7 @@ function CsvBuilderPanel() {
           style={{ color: "var(--color-sage-deep)" }}
         >
           <span>✓</span>
-          <span>4 cartes détectées · 0 lignes invalides</span>
+          <span>3 cartes détectées · 0 lignes invalides</span>
         </div>
       </motion.div>
     </div>
