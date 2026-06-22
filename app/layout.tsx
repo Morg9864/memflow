@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Lora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@/components/analytics";
+import { CookieBanner } from "@/components/cookie-banner";
 
 const lora = Lora({
 	subsets: ["latin"],
@@ -65,7 +67,11 @@ export default function RootLayout({
 			lang="fr"
 			className={`${lora.variable} ${plusJakartaSans.variable}`}
 		>
-			<body>{children}</body>
+			<body>
+				{children}
+				<Analytics />
+				<CookieBanner />
+			</body>
 		</html>
 	);
 }
