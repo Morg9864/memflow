@@ -10,10 +10,13 @@ const appLinks = [
   { label: "Lancer la démo", href: "https://demo.memflow.one" },
 ];
 
+import Link from "next/link";
+
 const legalLinks = [
-  { label: "Politique de confidentialité", href: "#" },
-  { label: "Conditions d'utilisation", href: "#" },
-  { label: "Mentions légales", href: "#" },
+  { label: "Politique de confidentialité", href: "/politique-confidentialite" },
+  { label: "Conditions d'utilisation", href: "/conditions-utilisation" },
+  { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "Politique cookies", href: "/politique-cookies" },
 ];
 
 export function Footer() {
@@ -92,14 +95,14 @@ export function Footer() {
               Légal
             </h3>
             {legalLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className="text-sm transition-colors hover:opacity-100"
                 style={{ color: "rgba(250,246,239,0.6)", fontFamily: "var(--font-sans)" }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
