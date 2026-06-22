@@ -7,25 +7,25 @@ import { cn } from "@/lib/utils";
 const STICKY_NOTES: { quote: string; author: string; rotate: string; delay: number }[] = [
   {
     quote: "J'ai relu mon cours trois fois… mais impossible de m'en souvenir à l'examen.",
-    author: "Étudiant en L2 Droit",
+    author: "Lara C., M2 Droit",
     rotate: "-2deg",
     delay: 0,
   },
   {
     quote: "J'avais tout compris le soir. Trois jours après, c'était comme si je n'avais jamais révisé.",
-    author: "Lycéen, Terminale S",
+    author: "Mohamed S., B2 Économie",
     rotate: "1.5deg",
     delay: 0.1,
   },
   {
     quote: "Je ne sais jamais quoi réviser en priorité. Je reprends tout depuis le début.",
-    author: "Étudiante en BTS",
+    author: "Léa P., B3 Histoire",
     rotate: "-1deg",
     delay: 0.2,
   },
   {
     quote: "Je révise au hasard, dans le désordre, sans savoir si ça sert vraiment à quelque chose.",
-    author: "Étudiant en M1 Informatique",
+    author: "Alex M., M1 Informatique",
     rotate: "2deg",
     delay: 0.3,
   },
