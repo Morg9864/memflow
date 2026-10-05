@@ -186,13 +186,14 @@ export function Hero() {
               className="relative z-10"
               style={{
                 transform: "perspective(900px) rotateY(-6deg) rotateX(2deg)",
-                width: "clamp(220px, 28vw, 320px)",
+                width: "clamp(360px, 38vw, 520px)",
               }}
             >
               <DeviceFrame
                 src={screenshots.dashboard.src}
                 alt={screenshots.dashboard.alt}
                 priority
+                variant="tablet"
                 className="w-full shadow-2xl"
               />
 
@@ -214,7 +215,7 @@ export function Hero() {
                   >
                     ✓
                   </span>
-                  <span className="font-semibold text-ink">ADN</span>
+                  <span className="font-semibold text-ink">Sciences</span>
                   <span
                     className="rounded-md px-1.5 py-0.5 text-[10px] font-semibold"
                     style={{
@@ -267,7 +268,7 @@ export function Hero() {
                 style={{ fontFamily: "var(--font-sans)" }}
               >
                 <span className="text-sm">🔥</span>{" "}
-                <span className="font-bold text-ink">14 j</span>{" "}
+                <span className="font-bold text-ink">27 j</span>{" "}
                 <span className="text-xs text-ink-soft">de série</span>
               </FloatCard>
 
@@ -276,12 +277,12 @@ export function Hero() {
                 delay={1.2}
                 duration={4.6}
                 yRange={8}
-                className="right-[-2.5rem] bottom-[12%]"
+                className="right-[-3rem] bottom-[12%]"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
                 <p className="text-xs text-ink-soft">Aujourd'hui</p>
                 <p className="font-bold text-ink">
-                  6 cartes{" "}
+                  46 cartes{" "}
                   <span
                     className="font-normal"
                     style={{ color: "var(--color-orange)" }}
@@ -304,7 +305,8 @@ export function Hero() {
               src={screenshots.dashboard.src}
               alt={screenshots.dashboard.alt}
               priority
-              className="w-full max-w-xs shadow-xl"
+              variant="tablet"
+              className="w-full max-w-[min(92vw,32rem)] shadow-xl"
             />
           </motion.div>
         </div>

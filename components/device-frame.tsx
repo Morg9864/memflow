@@ -6,9 +6,11 @@ interface DeviceFrameProps {
   alt: string;
   priority?: boolean;
   className?: string;
+  variant?: "phone" | "tablet";
 }
 
-export function DeviceFrame({ src, alt, priority = false, className }: DeviceFrameProps) {
+export function DeviceFrame({ src, alt, priority = false, className, variant = "phone" }: DeviceFrameProps) {
+  const isTablet = variant === "tablet";
   return (
     <div className={cn("relative select-none", className)}>
       {/* ── Volume buttons (left side) ── */}
@@ -18,7 +20,7 @@ export function DeviceFrame({ src, alt, priority = false, className }: DeviceFra
           position: "absolute",
           left: "-5px",
           top: "28%",
-          display: "flex",
+          display: isTablet ? "none" : "flex",
           flexDirection: "column",
           gap: "10px",
           zIndex: 10,
@@ -46,6 +48,7 @@ export function DeviceFrame({ src, alt, priority = false, className }: DeviceFra
           right: "-3px",
           top: "22%",
           zIndex: 10,
+          display: isTablet ? "none" : "block",
           width: "3px",
           height: "44px",
           borderRadius: "0 3px 3px 0",
@@ -57,7 +60,7 @@ export function DeviceFrame({ src, alt, priority = false, className }: DeviceFra
       {/* ── Tablet body ── */}
       <div
         style={{
-          borderRadius: "2.75rem",
+          borderRadius: isTablet ? "1.5rem" : "2.75rem",
           /* Warm charcoal aluminum — lighter at top-left edge */
           background:
             "linear-gradient(150deg, #3d3730 0%, #1c1814 35%, #221e19 65%, #312a23 100%)",
@@ -76,7 +79,7 @@ export function DeviceFrame({ src, alt, priority = false, className }: DeviceFra
         {/* Top bezel */}
         <div
           style={{
-            height: "2.75rem",
+            height: isTablet ? "1.5rem" : "2.75rem",
             background: "linear-gradient(180deg, #2e2820 0%, #1c1814 100%)",
             display: "flex",
             alignItems: "center",
@@ -135,7 +138,7 @@ export function DeviceFrame({ src, alt, priority = false, className }: DeviceFra
         <div
           className="relative overflow-hidden"
           style={{
-            aspectRatio: "1320/1922",
+            aspectRatio: isTablet ? "16/10" : "1320/1922",
             background: "#000",
           }}
         >
@@ -145,7 +148,7 @@ export function DeviceFrame({ src, alt, priority = false, className }: DeviceFra
             fill
             priority={priority}
             sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ objectFit: "cover", objectPosition: "top" }}
+            style={{ objectFit: "cover", objectPosition: isTablet ? "center top" : "top" }}
           />
 
           {/* Screen glare — subtle top-left sheen */}
@@ -165,7 +168,7 @@ export function DeviceFrame({ src, alt, priority = false, className }: DeviceFra
         {/* Bottom bezel */}
         <div
           style={{
-            height: "2.25rem",
+            height: isTablet ? "1.25rem" : "2.25rem",
             background: "linear-gradient(0deg, #2e2820 0%, #1c1814 100%)",
             display: "flex",
             alignItems: "center",
@@ -176,7 +179,7 @@ export function DeviceFrame({ src, alt, priority = false, className }: DeviceFra
           {/* Home indicator bar */}
           <div
             style={{
-              width: "2.5rem",
+              width: isTablet ? "2rem" : "2.5rem",
               height: "3px",
               borderRadius: "2px",
               background: "rgba(255,255,255,0.14)",
