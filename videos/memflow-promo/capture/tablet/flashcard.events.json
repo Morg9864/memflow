@@ -1,0 +1,40 @@
+{
+ "screen": [
+  1320,
+  2112
+ ],
+ "note": "t = seconds in assets/tablet/flashcard.mp4 (host tap time + 0.66 s measured from the first UI change)",
+ "events": [
+  {
+   "label": "open-collection",
+   "t": 2.281,
+   "x": 1000,
+   "y": 1050
+  },
+  {
+   "label": "study",
+   "t": 4.61,
+   "x": 721,
+   "y": 2011
+  },
+  {
+   "label": "mode-flashcard",
+   "t": 6.759,
+   "x": 390,
+   "y": 1260
+  },
+  {
+   "label": "reveal",
+   "t": 9.485,
+   "x": 660,
+   "y": 2005
+  },
+  {
+   "label": "rate-correct",
+   "t": 12.028,
+   "x": 816,
+   "y": 1990
+  }
+ ],
+ "offset": 0.66
+}

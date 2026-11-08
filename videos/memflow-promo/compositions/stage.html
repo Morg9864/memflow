@@ -1,0 +1,141 @@
+<template>
+  <style>
+    @font-face { font-family: "Outfit"; src: url("assets/fonts/outfit-medium.ttf"); font-weight: 500; }
+    #root { position: absolute; inset: 0; background: #FAF6EF; overflow: hidden; font-family: "Outfit", sans-serif; }
+    /* One stage, one camera: #st-world is moved, never the media inside it. */
+    #st-world { position: absolute; left: 0; top: 0; width: 2240px; height: 952px; transform-origin: 0 0; }
+
+    #st-browser {
+      position: absolute; left: 0; top: 0; width: 1440px; height: 952px; border-radius: 18px; overflow: hidden; background: #FAF6EF;
+      box-shadow: 0 40px 80px rgba(43, 36, 29, 0.16), 0 8px 20px rgba(43, 36, 29, 0.10), 0 0 0 1px rgba(43, 36, 29, 0.08);
+      transform-origin: 136px 106px;
+    }
+    #st-bar { position: absolute; left: 0; top: 0; width: 1440px; height: 52px; background: #F9E9DC; border-bottom: 1px solid #EBE2D6; }
+    #st-bar .dot { position: absolute; top: 20px; width: 12px; height: 12px; border-radius: 6px; background: #E3D3C2; }
+    #st-url {
+      position: absolute; left: 470px; top: 11px; width: 500px; height: 30px; border-radius: 9px; background: #FBF1E7;
+      font-size: 16px; line-height: 30px; color: #6B6258; text-align: center; letter-spacing: 0.01em;
+    }
+    #st-url b { color: #2B241D; font-weight: 500; }
+    #st-screen { position: absolute; left: 0; top: 52px; width: 1440px; height: 900px; overflow: hidden; background: #FAF6EF; }
+    #st-screen video { position: absolute; left: 0; top: 0; width: 1440px; height: 900px; }
+
+    #st-tablet {
+      position: absolute; left: 1600px; top: 0; width: 632px; height: 952px; border-radius: 46px; background: #221D18;
+      box-shadow: 0 40px 80px rgba(43, 36, 29, 0.20), 0 8px 20px rgba(43, 36, 29, 0.12), inset 0 0 0 2px #3A332C;
+    }
+    #st-tscreen { position: absolute; left: 24px; top: 24px; width: 584px; height: 904px; border-radius: 22px; overflow: hidden; background: #FAF6EF; }
+    /* 1320x2112 recording at 0.44242, status bar (45 px) cropped above the screen */
+    #st-tscreen .tmedia { position: absolute; left: 0; top: -19.9px; width: 584px; height: 934.4px; }
+
+    .st-touch { position: absolute; width: 50px; height: 50px; margin: -25px 0 0 -25px; border-radius: 50%;
+      background: rgba(43, 36, 29, 0.18); box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9); opacity: 0; }
+    .st-ring { position: absolute; border: 3px solid #D97B3F; border-radius: 14px; opacity: 0; }
+    #st-carrier { position: absolute; left: 305px; top: 112px; width: 72px; height: 72px; }
+    #st-note {
+      position: absolute; left: 110px; top: 790px; width: 360px; padding: 14px 18px; border-radius: 12px; background: rgba(250, 246, 239, 0.95);
+      font-size: 28px; line-height: 1.3; color: #2B241D; opacity: 0;
+    }
+  </style>
+  <div id="root" data-composition-id="stage" data-width="1920" data-height="1080">
+    <div id="st-world">
+      <div id="st-browser">
+        <div id="st-bar">
+          <span class="dot" style="left: 22px"></span><span class="dot" style="left: 42px"></span><span class="dot" style="left: 62px"></span>
+          <div id="st-url" data-layout-ignore>🔒 <b>app.memflow.one</b></div>
+        </div>
+        <div id="st-screen">
+          <!-- One continuous real session on app.memflow.one, choreographed on the narration (capture/record-web.mjs, take "film") -->
+          <video id="st-web" class="clip" data-start="0" data-duration="24.56" data-media-start="1.43" data-track-index="1" src="assets/web/film.mp4" muted playsinline></video>
+          <!-- Same session, stats page once loaded (take "statsfilm"); joined on the real Stats click -->
+          <video id="st-webstats" class="clip" data-start="24.56" data-duration="3.64" data-media-start="1.98" data-track-index="1" src="assets/web/statsfilm.mp4" muted playsinline></video>
+          <div id="st-ring-web" class="st-ring" style="left: 641px; top: 282px; width: 312px; height: 94px; border-radius: 18px"></div>
+        </div>
+      </div>
+
+      <div id="st-tablet">
+        <div id="st-tscreen">
+          <!-- Real touch sessions recorded on the tablet over adb (capture/record-tablet.sh) -->
+          <video id="st-tab-flash" class="clip tmedia" data-start="4.6" data-duration="6.1" data-media-start="6.98" data-track-index="2" src="assets/tablet/flashcard.mp4" muted playsinline></video>
+          <img id="st-tab-still1" class="clip tmedia" data-start="10.7" data-duration="2.9" data-track-index="2" src="assets/stills/tablet-qcm-first.jpg" alt="" />
+          <video id="st-tab-qcm1" class="clip tmedia" data-start="13.6" data-duration="4.55" data-media-start="0.06" data-track-index="2" src="assets/tablet/qcm.mp4" muted playsinline></video>
+          <video id="st-tab-qcm2" class="clip tmedia" data-start="18.15" data-duration="6.2" data-media-start="6.9" data-track-index="2" src="assets/tablet/qcm.mp4" muted playsinline></video>
+          <img id="st-tab-still2" class="clip tmedia" data-start="24.35" data-duration="3.85" data-track-index="2" src="assets/stills/tablet-qcm-last.jpg" alt="" />
+          <div id="st-ring-tab" class="st-ring" style="left: 53.4px; top: 607.3px; width: 239.6px; height: 78.6px"></div>
+          <div id="st-touch-study" class="st-touch"></div>
+          <div id="st-touch-reveal" class="st-touch"></div>
+          <div id="st-touch-rate" class="st-touch"></div>
+          <div id="st-touch-qcm" class="st-touch"></div>
+          <div id="st-touch-answer" class="st-touch"></div>
+        </div>
+      </div>
+    </div>
+    <img id="st-carrier" src="assets/brand/logo.png" alt="" />
+    <div id="st-note">Version tablette : disponibilité publique prévue courant été 2027</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const F = (t) => t - 2.8;                       // film second → stage second
+    const cam = (k, cx, cy) => ({ x: 960 - cx * k, y: 540 - cy * k, scale: k });
+    const S = 0.44242;                               // tablet screen px → stage px
+    const tp = (px, py) => [px * S, (py - 45) * S];  // inside #st-tscreen
+    const move = (t, d, k, cx, cy, ease = "power2.inOut") => tl.to("#st-world", { ...cam(k, cx, cy), duration: d, ease }, F(t));
+
+    // — Web: the browser builds around the logo carried from the hook
+    tl.set("#st-world", cam(1.06, 720, 476), 0);
+    tl.set("#st-tablet", { x: 700 }, 0);
+    tl.fromTo("#st-browser", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.55, ease: "expo.out" }, 0);
+    tl.fromTo("#st-carrier", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "power1.out" }, 0.55);
+    move(4.4, 0.9, 1.3, 720, 580);                  // "rassemble tes cartes par matière": the collections
+    move(6.35, 0.75, 1.25, 960, 330);                // collection page, towards "Étudier"
+    // — "ou sur tablette": pull back, the tablet enters
+    move(7.55, 0.8, 0.78, 1120, 476, "power3.inOut");
+    tl.fromTo("#st-tablet", { x: 700 }, { x: 0, duration: 0.85, ease: "expo.out" }, F(7.5));
+    move(8.45, 0.65, 1.02, 1700, 476);               // tablet beside the browser: the format change
+    tl.fromTo("#st-note", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power2.out" }, F(8.75));
+    tl.to("#st-note", { opacity: 0, duration: 0.2, ease: "power2.in" }, F(12.55));
+    move(9.2, 0.6, 1.5, 1916, 620);                  // card + answer + grades
+    // — "Memflow planifie…": whip back to the web session page
+    move(12.75, 0.55, 1.6, 700, 260, "power3.inOut");
+    move(14.6, 0.65, 1.6, 1000, 470);                // "selon tes réponses": due cards first
+    move(15.95, 0.55, 1.7, 646, 466);                // the modes
+    // — "saisie libre / choisis": whip to the tablet's mode sheet
+    move(19.0, 0.45, 1.75, 1916, 476, "power3.inOut");
+    move(20.5, 0.5, 1.55, 1916, 500);                // the QCM opens
+    // — "Tu as déjà un fichier ?": whip back to the web, import
+    move(22.15, 0.45, 1.15, 760, 476, "power3.inOut");
+    move(23.4, 0.6, 1.55, 1000, 420);                // dropzone → "Parcourir les fichiers"
+    move(24.55, 0.8, 1.3, 860, 420);                 // "vérifie l'aperçu"
+    move(25.6, 0.6, 1.4, 640, 560);                  // "Confirmer l'import"
+    move(26.75, 0.55, 1.1, 720, 476);                // sidebar → Stats
+    move(27.5, 1.9, 1.32, 860, 500, "power1.inOut"); // "ta progression"
+    // — "Memflow, ton espace d'étude": both devices, then into the logo
+    move(29.45, 0.7, 0.78, 1120, 476, "power3.inOut");
+    move(30.45, 0.55, 7.0, 136, 106, "power3.in");
+
+    // Accent ring on the modes, on the words (web grid tiles 294x76, base = QCM tile)
+    tl.fromTo("#st-ring-web", { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, F(16.42));
+    tl.to("#st-ring-web", { x: -303, y: 85, duration: 0.3, ease: "power3.out" }, F(17.2));   // Flashcard
+    tl.to("#st-ring-web", { x: -303, y: 170, duration: 0.3, ease: "power3.out" }, F(18.29)); // Texte à trous
+    tl.to("#st-ring-web", { opacity: 0, duration: 0.2 }, F(19.1));
+    // Tablet sheet: Saisie libre (base), then QCM before the real tap
+    tl.fromTo("#st-ring-tab", { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, F(19.42));
+    tl.to("#st-ring-tab", { y: (939 - 1429) * S, duration: 0.3, ease: "power3.out" }, F(19.95));
+    tl.to("#st-ring-tab", { opacity: 0, duration: 0.15 }, F(20.42));
+
+    // Touch marks at the real adb tap times (capture/tablet/*.events.json)
+    const touch = (id, t, px, py) => {
+      const [x, y] = tp(px, py);
+      tl.set(id, { left: x, top: y }, 0);
+      tl.fromTo(id, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.08, ease: "power2.out" }, F(t) - 0.06);
+      tl.to(id, { opacity: 0, scale: 1.35, duration: 0.32, ease: "power2.out" }, F(t) + 0.16);
+    };
+    touch("#st-touch-study", 18.217, 721, 2011);
+    touch("#st-touch-reveal", 9.905, 660, 2005);
+    touch("#st-touch-rate", 12.448, 816, 1990);
+    touch("#st-touch-qcm", 20.352, 390, 1016);
+    touch("#st-touch-answer", 21.502, 975, 1151);
+
+    window.__timelines["stage"] = tl;
+  </script>
+</template>

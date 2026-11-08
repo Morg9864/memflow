@@ -1,0 +1,8 @@
+node_modules/
+capture/web/
+capture/tablet/raw/
+renders/
+.media/
+.hyperframes/
+.thumbnails/
+.waveform-cache/

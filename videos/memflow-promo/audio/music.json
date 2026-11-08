@@ -1,0 +1,6 @@
+{
+ "provider": "elevenlabs-music",
+ "model": "music_v1",
+ "prompt": "Warm, calm and hopeful instrumental bed for a study app video. Soft felt piano and light fingerpicked acoustic guitar, gentle brushed percussion, warm bass, 94 BPM, major key. Starts already gently present (no long intro), steady and unobtrusive under a female French voiceover, a slight lift around 28 seconds, resolves to a clean ending at 37 seconds. No vocals.",
+ "length_ms": 37000
+}
