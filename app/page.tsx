@@ -7,6 +7,7 @@ import {
 	SpacedRepetition,
 	StatsSection,
 	StudyModes,
+	TabletSection,
 	UseCases,
 } from "@/components/site-content";
 import { VideoSection } from "@/components/video-section";
@@ -22,6 +23,7 @@ export default function Home() {
         <ProductShowcase />
         <StudyModes />
         <SpacedRepetition />
+        <TabletSection />
         <ImportSection />
         <StatsSection />
         <UseCases />

@@ -204,6 +204,68 @@
 .platformNote p { max-width: 830px; margin: 6px 0 0; color: var(--site-muted); font-size: 14px; line-height: 1.65; }
 .platformNote strong { color: var(--site-ink); font-weight: 600; }
 
+/* ── Real devices ─────────────────────────────────────────── */
+.deviceScreen { position: relative; overflow: hidden; background: var(--color-cream); }
+.screenBar { height: 7.2%; min-height: 18px; display: flex; align-items: center; gap: 4%; padding: 0 2.4%; background: #f4eee7; border-bottom: 1px solid #e6ddd1; }
+.screenDots { display: inline-flex; gap: 5px; }
+.screenDots i { width: 7px; height: 7px; border-radius: 50%; background: #d9cec3; }
+.screenUrl { flex: 0 1 38%; margin: 0 auto; padding: 2px 10px; border-radius: 6px; background: #fff; color: #70645a; font-size: 10px; font-weight: 500; text-align: center; white-space: nowrap; overflow: hidden; }
+.screenImage { position: relative; aspect-ratio: 1.6; }
+.screenImage img { object-fit: cover; object-position: top center; }
+
+.laptop { margin: 0; position: relative; padding-bottom: 6%; }
+.laptopLid {
+	position: relative;
+	padding: 2.6% 2.6% 3.4%;
+	border-radius: 20px 20px 8px 8px;
+	background: #171512;
+	box-shadow: 0 0 0 1.5px #7d766d, 0 0 0 3px #bdb5aa, inset 0 0 0 1px rgba(255, 255, 255, .06), 0 30px 60px -20px rgba(43, 36, 29, .28);
+}
+.laptopLid .deviceScreen { border-radius: 4px; }
+.laptopCamera { position: absolute; top: 1.05%; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #3a3f4a, #07080b); }
+.laptopBase {
+	position: relative;
+	width: 116%;
+	margin-left: -8%;
+	height: clamp(12px, 2.4vw, 22px);
+	border-radius: 2px 2px 18px 18px / 2px 2px 100% 100%;
+	background: linear-gradient(180deg, #f3eee8 0%, #d8d1c7 38%, #b7aea2 100%);
+	box-shadow: inset 0 1px 0 #fff, 0 18px 30px -12px rgba(43, 36, 29, .35);
+}
+.laptopBase::before { content: ""; position: absolute; top: 0; left: 50%; width: 15%; height: 42%; transform: translateX(-50%); border-radius: 0 0 10px 10px; background: linear-gradient(180deg, #c3baae, #d6cfc5); }
+
+.monitor { margin: 0; display: flex; flex-direction: column; align-items: center; }
+.monitorDisplay {
+	width: 100%;
+	padding: 2%;
+	border-radius: 16px;
+	background: #12110f;
+	box-shadow: 0 0 0 2px #cfc8be, 0 0 0 3px #a69d91, inset 0 0 0 1px rgba(255, 255, 255, .05), 0 34px 70px -24px rgba(43, 36, 29, .32);
+}
+.monitorDisplay .deviceScreen { border-radius: 4px; }
+.monitorNeck { width: 15%; aspect-ratio: 1 / .78; margin-top: 3px; clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%); background: linear-gradient(90deg, #b8afa3 0%, #ece7e0 46%, #c7bfb4 100%); }
+.monitorFoot { width: 34%; height: clamp(9px, 1.2vw, 14px); border-radius: 8px 8px 4px 4px; background: linear-gradient(180deg, #f1ece6 0%, #c9c1b6 100%); box-shadow: 0 14px 22px -10px rgba(43, 36, 29, .4); }
+
+.tablet {
+	position: relative;
+	margin: 0;
+	padding: 3.4%;
+	border-radius: 30px;
+	background: #141210;
+	box-shadow: 0 0 0 1.5px #5d5750, 0 0 0 3px #a59c90, inset 0 0 0 1px rgba(255, 255, 255, .06), 0 40px 80px -28px rgba(43, 36, 29, .4);
+}
+.tablet::after { content: ""; position: absolute; right: -4px; top: 16%; width: 2px; height: 9%; border-radius: 0 2px 2px 0; background: #8d8478; }
+.tabletCamera { position: absolute; top: 1.3%; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #3a3f4a, #07080b); }
+.tabletScreen { position: relative; aspect-ratio: 1320 / 2044; border-radius: 14px; overflow: hidden; background: var(--color-cream); }
+.tabletScreen img { object-fit: cover; }
+
+.tabletSection { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 80px; border-top: 1px solid var(--site-border); }
+.tabletCopy > p:not(.kicker):not(.tabletNote) { color: var(--site-muted); font-size: 17px; line-height: 1.7; max-width: 470px; margin: 19px 0 24px; }
+.tabletNote { margin: 26px 0 0; padding-top: 18px; border-top: 1px solid var(--site-border); color: var(--site-muted); font-size: 13px; line-height: 1.6; max-width: 430px; }
+.tabletStage { position: relative; min-height: 640px; }
+.tabletBack { position: absolute; left: 0; top: 0; width: 46%; }
+.tabletFront { position: absolute; right: 0; top: 70px; width: 52%; }
+
 @media (max-width: 900px) {
 	.hero { min-height: auto; grid-template-columns: 1fr; padding-top: 130px; gap: 43px; }
 	.heroCopy { max-width: 690px; }
@@ -213,6 +275,8 @@
 	.repetition { gap: 48px; }
 	.import { gap: 42px; }
 	.stats { gap: 38px; }
+	.tabletSection { grid-template-columns: 1fr; gap: 48px; }
+	.tabletStage { min-height: 0; aspect-ratio: 1.12; max-width: 640px; }
 }
 @media (max-width: 650px) {
 	.hero,.section { width: calc(100% - 36px); }
@@ -242,6 +306,14 @@
 	.testAccount { padding: 20px 17px; }
 	.testAccount dl > div { align-items: flex-start; flex-direction: column; gap: 4px; }
 	.platformNote { padding-top: 17px; }
+	.tabletSection { gap: 34px; }
+	.tabletCopy > p:not(.kicker):not(.tabletNote) { font-size: 15px; }
+	.tablet { border-radius: 18px; }
+	.tabletScreen { border-radius: 8px; }
+	.tabletFront { top: 13%; }
+	.laptopBase { width: 108%; margin-left: -4%; }
+	.screenUrl { font-size: 8px; }
+	.screenDots i { width: 5px; height: 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

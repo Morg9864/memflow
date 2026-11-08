@@ -41,6 +41,56 @@ function BrowserShot({
 	);
 }
 
+// Real devices for the hero (laptop) and the import (desktop monitor); the other shots stay as browser windows.
+function ScreenBrowser({ src, alt, sizes, priority = false }: { src: string; alt: string; sizes: string; priority?: boolean }) {
+	return (
+		<div className={styles.deviceScreen}>
+			<div className={styles.screenBar} aria-hidden="true">
+				<span className={styles.screenDots}><i /><i /><i /></span>
+				<span className={styles.screenUrl}>app.memflow.one</span>
+			</div>
+			<div className={styles.screenImage}>
+				<Image src={src} alt={alt} fill sizes={sizes} priority={priority} />
+			</div>
+		</div>
+	);
+}
+
+function LaptopShot({ src, alt }: { src: string; alt: string }) {
+	return (
+		<figure className={styles.laptop}>
+			<div className={styles.laptopLid}>
+				<span className={styles.laptopCamera} aria-hidden="true" />
+				<ScreenBrowser src={src} alt={alt} sizes="(max-width: 900px) 100vw, 58vw" priority />
+			</div>
+			<div className={styles.laptopBase} aria-hidden="true" />
+		</figure>
+	);
+}
+
+function MonitorShot({ src, alt }: { src: string; alt: string }) {
+	return (
+		<figure className={styles.monitor}>
+			<div className={styles.monitorDisplay}>
+				<ScreenBrowser src={src} alt={alt} sizes="(max-width: 900px) 100vw, 52vw" />
+			</div>
+			<div className={styles.monitorNeck} aria-hidden="true" />
+			<div className={styles.monitorFoot} aria-hidden="true" />
+		</figure>
+	);
+}
+
+function TabletShot({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+	return (
+		<figure className={`${styles.tablet} ${className}`}>
+			<span className={styles.tabletCamera} aria-hidden="true" />
+			<div className={styles.tabletScreen}>
+				<Image src={src} alt={alt} fill sizes="(max-width: 650px) 70vw, 30vw" />
+			</div>
+		</figure>
+	);
+}
+
 export function Hero() {
 	return (
 		<section className={styles.hero}>
@@ -62,10 +112,9 @@ export function Hero() {
 				<p className={styles.availability}>Application web disponible maintenant</p>
 			</div>
 			<div className={styles.heroVisual}>
-				<BrowserShot
+				<LaptopShot
 					src="/screenshots-web/home-data.png"
-					alt="Tableau de bord web Memflow avec cartes à revoir, indicateurs et collections"
-					label="Ton espace Memflow"
+					alt="Tableau de bord web Memflow sur un ordinateur portable, avec cartes à revoir, indicateurs et collections"
 				/>
 				<div className={styles.heroCaption}>
 					<span className={styles.captionMark} aria-hidden="true"><Check size={15} /></span>
@@ -172,14 +221,49 @@ export function SpacedRepetition() {
 	);
 }
 
+export function TabletSection() {
+	return (
+		<section className={`${styles.section} ${styles.tabletSection}`} id="tablette">
+			<div className={styles.tabletCopy}>
+				<p className={styles.kicker}>Aussi sur tablette</p>
+				<h2>La même méthode, au bout des doigts.</h2>
+				<p>
+					Choisis ton mode de session, retourne la carte d’un geste et note ta réponse
+					avec Encore, Difficile, Correct ou Facile. Tes collections et ta progression
+					sont les mêmes que sur le web.
+				</p>
+				<div className={styles.importFacts}>
+					<p><Layers3 size={18} /> Six modes d’étude, plus le mode adaptatif</p>
+					<p><RefreshCw size={18} /> L’auto-évaluation après chaque carte</p>
+					<p><Check size={18} /> La correction et l’explication tout de suite</p>
+				</div>
+				<p className={styles.tabletNote}>
+					La version tablette est prête. Sa disponibilité publique est prévue courant été 2027.
+				</p>
+			</div>
+			<div className={styles.tabletStage}>
+				<TabletShot
+					src="/screenshots-tablet/accueil.webp"
+					alt="Application tablette Memflow : accueil avec 191 cartes à revoir, la série, la réussite et les collections"
+					className={styles.tabletBack}
+				/>
+				<TabletShot
+					src="/screenshots-tablet/flashcard.webp"
+					alt="Application tablette Memflow : flashcard révélée avec les boutons Encore, Difficile, Correct et Facile"
+					className={styles.tabletFront}
+				/>
+			</div>
+		</section>
+	);
+}
+
 export function ImportSection() {
 	return (
 		<section className={`${styles.section} ${styles.import}`} id="import">
 			<div className={styles.importVisual}>
-				<BrowserShot
+				<MonitorShot
 					src="/screenshots-web/import-preview.png"
-					alt="Aperçu d’un import CSV Memflow avec cartes détectées et ligne invalide signalée"
-					label="Importer des cartes"
+					alt="Aperçu d’un import CSV Memflow sur un écran de bureau, avec cartes détectées et ligne invalide signalée"
 				/>
 			</div>
 			<div className={styles.importCopy}>
