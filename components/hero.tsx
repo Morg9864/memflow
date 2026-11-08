@@ -2,8 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { DeviceFrame } from "@/components/device-frame";
-import { screenshots } from "@/lib/screenshots";
+import Image from "next/image";
 import { fadeUp, stagger, viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -186,14 +185,15 @@ export function Hero() {
               className="relative z-10"
               style={{
                 transform: "perspective(900px) rotateY(-6deg) rotateX(2deg)",
-                width: "clamp(360px, 38vw, 520px)",
+                width: "clamp(440px, 46vw, 700px)",
               }}
             >
-              <DeviceFrame
-                src={screenshots.dashboard.src}
-                alt={screenshots.dashboard.alt}
+              <Image
+                src="/screenshots/tablet-mockup-transparent.png"
+                alt="Tablette MemFlow affichant le tableau de bord"
+                width={1627}
+                height={967}
                 priority
-                variant="tablet"
                 className="w-full shadow-2xl"
               />
 
@@ -301,12 +301,13 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="flex justify-center lg:hidden"
           >
-            <DeviceFrame
-              src={screenshots.dashboard.src}
-              alt={screenshots.dashboard.alt}
+            <Image
+              src="/screenshots/tablet-mockup-transparent.png"
+              alt="Tablette MemFlow affichant le tableau de bord"
+              width={1627}
+              height={967}
               priority
-              variant="tablet"
-              className="w-full max-w-[min(92vw,32rem)] shadow-xl"
+              className="w-full max-w-[min(96vw,40rem)] shadow-xl"
             />
           </motion.div>
         </div>
