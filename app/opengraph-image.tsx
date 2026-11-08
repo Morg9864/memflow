@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "MemFlow: Retenir plus. Réviser moins.";
+export const alt = "Memflow — Apprends aujourd’hui. Retrouve-le demain.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,18 +21,6 @@ export default async function Image() {
 				position: "relative",
 			}}
 		>
-			{/* Orange accent bar */}
-			<div
-				style={{
-					position: "absolute",
-					top: 0,
-					left: 0,
-					right: 0,
-					height: "6px",
-					background: "#D97B3F",
-				}}
-			/>
-
 			{/* Wordmark */}
 			<div
 				style={{
@@ -75,8 +63,8 @@ export default async function Image() {
 					maxWidth: "900px",
 				}}
 			>
-				Retenir plus.{" "}
-				<span style={{ color: "#D97B3F" }}>Réviser moins.</span>
+				Apprends aujourd’hui.{" "}
+				<span style={{ color: "#D97B3F" }}>Retrouve-le demain.</span>
 			</div>
 
 			{/* Tagline */}
@@ -90,7 +78,7 @@ export default async function Image() {
 					fontWeight: "400",
 				}}
 			>
-				Flashcards · Révision espacée · Apprentissage actif
+				Collections · Révision espacée · Statistiques
 			</div>
 
 			{/* Bottom accent */}

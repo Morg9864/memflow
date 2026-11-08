@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #FAF6EF; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #bg { position: absolute; inset: 0; background: #FAF6EF; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="36.6" data-width="1920" data-height="1080">
+      <div id="bg"></div>
+      <div id="hook" data-composition-id="hook" data-composition-src="compositions/hook.html" class="clip" data-start="0" data-duration="2.8" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index: 1"></div>
+      <div id="stage" data-composition-id="stage" data-composition-src="compositions/stage.html" class="clip" data-start="2.8" data-duration="28.2" data-track-index="2" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index: 2"></div>
+      <div id="endcard" data-composition-id="endcard" data-composition-src="compositions/endcard.html" class="clip" data-start="31" data-duration="5.6" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index: 3"></div>
+
+      <!-- Narration: ElevenLabs, voice xgJyhAugJB6JKenNlaNw "Perle" (audio/tts-elevenlabs.py), loudness-normalised to -17 LUFS -->
+      <audio id="voiceover" class="clip" data-start="0.5" data-duration="34.35" data-track-index="10" data-volume="1" src="assets/audio/voiceover-mix.mp3"></audio>
+      <!-- Music bed: ElevenLabs Music (audio/music-elevenlabs.py), ~12 dB under the voice -->
+      <audio id="music" class="clip" data-start="0" data-duration="36.6" data-track-index="11" data-volume="0.2" data-fade-in="0.4" data-fade-out="1.4" src="assets/audio/music.mp3"></audio>
+      <!-- Sound on the real clicks (web), real taps (tablet) and camera whips; peaks land one frame after the picture -->
+      <audio id="sfx-click-1" class="clip" data-start="6.210" data-duration="0.4" data-track-index="12" data-volume="0.6" src="assets/audio/sfx-click.mp3"></audio>
+      <audio id="sfx-click-2" class="clip" data-start="8.000" data-duration="0.4" data-track-index="12" data-volume="0.6" src="assets/audio/sfx-click.mp3"></audio>
+      <audio id="sfx-click-3" class="clip" data-start="22.440" data-duration="0.4" data-track-index="12" data-volume="0.6" src="assets/audio/sfx-click.mp3"></audio>
+      <audio id="sfx-click-4" class="clip" data-start="24.090" data-duration="0.4" data-track-index="12" data-volume="0.6" src="assets/audio/sfx-click.mp3"></audio>
+      <audio id="sfx-click-5" class="clip" data-start="27.320" data-duration="0.4" data-track-index="12" data-volume="0.6" src="assets/audio/sfx-click.mp3"></audio>
+      <audio id="sfx-tap-1" class="clip" data-start="9.905" data-duration="0.3" data-track-index="12" data-volume="0.7" src="assets/audio/sfx-tap.mp3"></audio>
+      <audio id="sfx-tap-2" class="clip" data-start="12.448" data-duration="0.3" data-track-index="12" data-volume="0.7" src="assets/audio/sfx-tap.mp3"></audio>
+      <audio id="sfx-tap-3" class="clip" data-start="20.352" data-duration="0.3" data-track-index="12" data-volume="0.7" src="assets/audio/sfx-tap.mp3"></audio>
+      <audio id="sfx-tap-4" class="clip" data-start="21.502" data-duration="0.3" data-track-index="12" data-volume="0.7" src="assets/audio/sfx-tap.mp3"></audio>
+      <audio id="sfx-whoosh-1" class="clip" data-start="2.438" data-duration="0.6" data-track-index="13" data-volume="0.18" src="assets/audio/sfx-whoosh-a.mp3"></audio>
+      <audio id="sfx-whoosh-2" class="clip" data-start="7.762" data-duration="0.6" data-track-index="13" data-volume="0.3" src="assets/audio/sfx-whoosh-b.mp3"></audio>
+      <audio id="sfx-whoosh-3" class="clip" data-start="12.858" data-duration="0.6" data-track-index="13" data-volume="0.3" src="assets/audio/sfx-whoosh-a.mp3"></audio>
+      <audio id="sfx-whoosh-4" class="clip" data-start="19.032" data-duration="0.6" data-track-index="13" data-volume="0.3" src="assets/audio/sfx-whoosh-b.mp3"></audio>
+      <audio id="sfx-whoosh-5" class="clip" data-start="22.208" data-duration="0.6" data-track-index="13" data-volume="0.3" src="assets/audio/sfx-whoosh-a.mp3"></audio>
+      <audio id="sfx-whoosh-6" class="clip" data-start="29.612" data-duration="0.6" data-track-index="13" data-volume="0.18" src="assets/audio/sfx-whoosh-b.mp3"></audio>
+      <audio id="sfx-whoosh-7" class="clip" data-start="30.670" data-duration="1.0" data-track-index="13" data-volume="0.3" src="assets/audio/sfx-whoosh-low.mp3"></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

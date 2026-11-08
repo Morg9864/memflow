@@ -1,0 +1,42 @@
+<template>
+  <style>
+    @font-face { font-family: "Lora"; src: url("assets/fonts/lora-semibold.ttf"); font-weight: 600; }
+    @font-face { font-family: "Outfit"; src: url("assets/fonts/outfit-medium.ttf"); font-weight: 500; }
+    @font-face { font-family: "Outfit"; src: url("assets/fonts/outfit-semibold.ttf"); font-weight: 600; }
+    #root { position: absolute; inset: 0; background: #FAF6EF; overflow: hidden; }
+    /* Lockup: logo 190 px + 28 px gap + wordmark; centred on x = 960 */
+    #ec-logo { position: absolute; left: 578px; top: 300px; width: 190px; height: 190px; }
+    #ec-word {
+      position: absolute; left: 796px; top: 322px; font-family: "Lora", serif; font-weight: 600; font-size: 150px; line-height: 1;
+      letter-spacing: -0.045em; color: #2B241D; white-space: nowrap;
+    }
+    #ec-word span { color: #D97B3F; }
+    #ec-url {
+      position: absolute; left: 0; width: 1920px; top: 590px; text-align: center; font-family: "Outfit", sans-serif; font-weight: 500;
+      font-size: 44px; letter-spacing: 0.01em; color: #6B6258;
+    }
+    #ec-cta {
+      position: absolute; left: 734px; top: 676px; width: 452px; height: 92px; border-radius: 26px; background: #D97B3F; color: #fff;
+      font-family: "Outfit", sans-serif; font-weight: 600; font-size: 36px; line-height: 92px; text-align: center;
+      box-shadow: 0 18px 40px rgba(196, 101, 46, 0.25);
+    }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1920" data-height="1080">
+    <img id="ec-logo" src="assets/brand/logo.png" alt="Memflow" />
+    <div id="ec-word">Mem<span>flow</span></div>
+    <div id="ec-url">app.memflow.one</div>
+    <div id="ec-cta">Ouvrir l’application →</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // The zoom through the browser's logo ends here: the mark arrives huge, centred, then settles into the lockup.
+    // Match cut: frame 0 shows the logo exactly as the zoom left it (476 px, centred), then it settles.
+    tl.fromTo("#ec-logo", { x: 960 - 673, y: 540 - 395, scale: 440 / 190 }, { x: 0, y: 0, scale: 1, duration: 0.85, ease: "power3.inOut" }, 0.05);
+    // Wordmark wipes in from the logo outwards ("ton espace d'étude")
+    tl.fromTo("#ec-word", { clipPath: "inset(0% 100% 0% 0%)", x: -30 }, { clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.6, ease: "power3.out" }, 0.55);
+    // The address, then the button on "Ouvre l'application" (film 32.57 → 1.72 here)
+    tl.fromTo("#ec-url", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 1.15);
+    tl.fromTo("#ec-cta", { opacity: 0, y: 26, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 1.52);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>

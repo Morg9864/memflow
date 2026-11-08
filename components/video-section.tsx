@@ -17,7 +17,7 @@ export function VideoSection() {
           <SectionHeading
             eyebrow="En vidéo"
             title="Voir avant de lire"
-            lede="Trente secondes pour comprendre comment MemFlow transforme un cours en mémoire durable."
+            lede="Moins de quarante secondes pour voir Memflow à l’œuvre, sur le web et sur tablette."
           />
         </FadeIn>
 
@@ -48,32 +48,15 @@ export function VideoSection() {
                   "0 4px 6px -1px rgba(43,36,29,0.06), 0 20px 60px -12px rgba(43,36,29,0.14)",
               }}
             >
-              {/*
-                The player inside the iframe stacks a 16:9 canvas above a ~60px
-                control bar, so a bare 16/9 wrapper crushes the bar. We give the
-                wrapper a slightly taller ratio (4/3 on mobile for generous bar
-                headroom, 16/10 from md up) plus a min-height floor. The player's
-                background is transparent, so any spare space shows the card's
-                cream and reads as seamless letterboxing.
-              */}
-              <div className="relative aspect-4/3 min-h-70 w-full md:aspect-16/10">
-                <iframe
-                  src="/launch-video.html"
-                  title="MemFlow — vidéo de présentation"
-                  loading="lazy"
-                  allowTransparency
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    width: "100%",
-                    height: "100%",
-                    border: "none",
-                    display: "block",
-                    background: "transparent",
-                    borderRadius: "inherit",
-                  }}
-                />
-              </div>
+              <video
+                className="block aspect-video w-full"
+                src="/videos/memflow-presentation.mp4"
+                poster="/videos/memflow-presentation-poster.jpg"
+                controls
+                playsInline
+                preload="none"
+                aria-label="Memflow — vidéo de présentation, sur le web et sur tablette"
+              />
             </motion.div>
           </div>
         </FadeIn>

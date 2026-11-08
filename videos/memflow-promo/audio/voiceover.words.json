@@ -1,0 +1,442 @@
+{
+ "voice_id": "xgJyhAugJB6JKenNlaNw",
+ "model": "eleven_multilingual_v2",
+ "text": "Un cours, ça se retient en y revenant. Avec Memflow, rassemble tes cartes par matière, puis lance une session sur le web ou sur tablette. Réponds, révèle la réponse et évalue ce que tu maîtrises. Memflow planifie tes prochaines révisions selon tes réponses. QCM, flashcards, texte à trous ou saisie libre : choisis ta façon de t’entraîner. Tu as déjà un fichier ? Importe-le, vérifie l’aperçu, puis commence. Tes cartes et ta progression, au même endroit. Memflow, ton espace d’étude sur le web. Ouvre l’application et commence dès aujourd’hui.",
+ "words": [
+  {
+   "w": "Un",
+   "start": 0.0,
+   "end": 0.139
+  },
+  {
+   "w": "cours",
+   "start": 0.197,
+   "end": 0.522
+  },
+  {
+   "w": "ça",
+   "start": 0.639,
+   "end": 0.766
+  },
+  {
+   "w": "se",
+   "start": 0.824,
+   "end": 0.906
+  },
+  {
+   "w": "retient",
+   "start": 0.964,
+   "end": 1.335
+  },
+  {
+   "w": "en",
+   "start": 1.382,
+   "end": 1.474
+  },
+  {
+   "w": "y",
+   "start": 1.544,
+   "end": 1.567
+  },
+  {
+   "w": "revenant",
+   "start": 1.614,
+   "end": 2.055
+  },
+  {
+   "w": "Avec",
+   "start": 2.624,
+   "end": 2.914
+  },
+  {
+   "w": "Memflow",
+   "start": 2.972,
+   "end": 3.448
+  },
+  {
+   "w": "rassemble",
+   "start": 3.738,
+   "end": 4.168
+  },
+  {
+   "w": "tes",
+   "start": 4.214,
+   "end": 4.319
+  },
+  {
+   "w": "cartes",
+   "start": 4.342,
+   "end": 4.644
+  },
+  {
+   "w": "par",
+   "start": 4.667,
+   "end": 4.807
+  },
+  {
+   "w": "matière",
+   "start": 4.853,
+   "end": 5.399
+  },
+  {
+   "w": "puis",
+   "start": 5.619,
+   "end": 5.805
+  },
+  {
+   "w": "lance",
+   "start": 5.828,
+   "end": 6.037
+  },
+  {
+   "w": "une",
+   "start": 6.072,
+   "end": 6.2
+  },
+  {
+   "w": "session",
+   "start": 6.246,
+   "end": 6.594
+  },
+  {
+   "w": "sur",
+   "start": 6.641,
+   "end": 6.78
+  },
+  {
+   "w": "le",
+   "start": 6.815,
+   "end": 6.885
+  },
+  {
+   "w": "web",
+   "start": 6.931,
+   "end": 7.14
+  },
+  {
+   "w": "ou",
+   "start": 7.256,
+   "end": 7.361
+  },
+  {
+   "w": "sur",
+   "start": 7.407,
+   "end": 7.535
+  },
+  {
+   "w": "tablette",
+   "start": 7.57,
+   "end": 8.069
+  },
+  {
+   "w": "Réponds",
+   "start": 8.638,
+   "end": 9.091
+  },
+  {
+   "w": "révèle",
+   "start": 9.334,
+   "end": 9.636
+  },
+  {
+   "w": "la",
+   "start": 9.66,
+   "end": 9.718
+  },
+  {
+   "w": "réponse",
+   "start": 9.776,
+   "end": 10.252
+  },
+  {
+   "w": "et",
+   "start": 10.368,
+   "end": 10.542
+  },
+  {
+   "w": "évalue",
+   "start": 10.612,
+   "end": 11.041
+  },
+  {
+   "w": "ce",
+   "start": 11.064,
+   "end": 11.169
+  },
+  {
+   "w": "que",
+   "start": 11.215,
+   "end": 11.308
+  },
+  {
+   "w": "tu",
+   "start": 11.343,
+   "end": 11.436
+  },
+  {
+   "w": "maîtrises",
+   "start": 11.482,
+   "end": 11.981
+  },
+  {
+   "w": "Memflow",
+   "start": 12.655,
+   "end": 13.096
+  },
+  {
+   "w": "planifie",
+   "start": 13.131,
+   "end": 13.526
+  },
+  {
+   "w": "tes",
+   "start": 13.549,
+   "end": 13.653
+  },
+  {
+   "w": "prochaines",
+   "start": 13.688,
+   "end": 14.059
+  },
+  {
+   "w": "révisions",
+   "start": 14.083,
+   "end": 14.512
+  },
+  {
+   "w": "selon",
+   "start": 14.547,
+   "end": 14.791
+  },
+  {
+   "w": "tes",
+   "start": 14.837,
+   "end": 14.93
+  },
+  {
+   "w": "réponses",
+   "start": 14.953,
+   "end": 15.418
+  },
+  {
+   "w": "QCM",
+   "start": 15.975,
+   "end": 16.451
+  },
+  {
+   "w": "flashcards",
+   "start": 16.741,
+   "end": 17.368
+  },
+  {
+   "w": "texte",
+   "start": 17.833,
+   "end": 18.135
+  },
+  {
+   "w": "à",
+   "start": 18.158,
+   "end": 18.181
+  },
+  {
+   "w": "trous",
+   "start": 18.239,
+   "end": 18.553
+  },
+  {
+   "w": "ou",
+   "start": 18.761,
+   "end": 18.912
+  },
+  {
+   "w": "saisie",
+   "start": 18.97,
+   "end": 19.203
+  },
+  {
+   "w": "libre",
+   "start": 19.226,
+   "end": 19.563
+  },
+  {
+   "w": "choisis",
+   "start": 19.922,
+   "end": 20.236
+  },
+  {
+   "w": "ta",
+   "start": 20.259,
+   "end": 20.34
+  },
+  {
+   "w": "façon",
+   "start": 20.387,
+   "end": 20.642
+  },
+  {
+   "w": "de",
+   "start": 20.677,
+   "end": 20.735
+  },
+  {
+   "w": "t’entraîner",
+   "start": 20.782,
+   "end": 21.246
+  },
+  {
+   "w": "Tu",
+   "start": 21.908,
+   "end": 22.047
+  },
+  {
+   "w": "as",
+   "start": 22.094,
+   "end": 22.14
+  },
+  {
+   "w": "déjà",
+   "start": 22.163,
+   "end": 22.372
+  },
+  {
+   "w": "un",
+   "start": 22.395,
+   "end": 22.442
+  },
+  {
+   "w": "fichier",
+   "start": 22.512,
+   "end": 22.837
+  },
+  {
+   "w": "Importe-le",
+   "start": 23.266,
+   "end": 23.94
+  },
+  {
+   "w": "vérifie",
+   "start": 24.311,
+   "end": 24.659
+  },
+  {
+   "w": "l’aperçu",
+   "start": 24.683,
+   "end": 25.17
+  },
+  {
+   "w": "puis",
+   "start": 25.286,
+   "end": 25.449
+  },
+  {
+   "w": "commence",
+   "start": 25.472,
+   "end": 25.983
+  },
+  {
+   "w": "Tes",
+   "start": 26.459,
+   "end": 26.633
+  },
+  {
+   "w": "cartes",
+   "start": 26.656,
+   "end": 27.028
+  },
+  {
+   "w": "et",
+   "start": 27.202,
+   "end": 27.364
+  },
+  {
+   "w": "ta",
+   "start": 27.399,
+   "end": 27.481
+  },
+  {
+   "w": "progression",
+   "start": 27.539,
+   "end": 28.119
+  },
+  {
+   "w": "au",
+   "start": 28.235,
+   "end": 28.386
+  },
+  {
+   "w": "même",
+   "start": 28.433,
+   "end": 28.618
+  },
+  {
+   "w": "endroit",
+   "start": 28.642,
+   "end": 28.955
+  },
+  {
+   "w": "Memflow",
+   "start": 29.617,
+   "end": 30.128
+  },
+  {
+   "w": "ton",
+   "start": 30.464,
+   "end": 30.627
+  },
+  {
+   "w": "espace",
+   "start": 30.696,
+   "end": 30.987
+  },
+  {
+   "w": "d’étude",
+   "start": 31.01,
+   "end": 31.323
+  },
+  {
+   "w": "sur",
+   "start": 31.347,
+   "end": 31.463
+  },
+  {
+   "w": "le",
+   "start": 31.498,
+   "end": 31.556
+  },
+  {
+   "w": "web",
+   "start": 31.59,
+   "end": 31.823
+  },
+  {
+   "w": "Ouvre",
+   "start": 32.066,
+   "end": 32.264
+  },
+  {
+   "w": "l’application",
+   "start": 32.287,
+   "end": 32.879
+  },
+  {
+   "w": "et",
+   "start": 32.937,
+   "end": 33.018
+  },
+  {
+   "w": "commence",
+   "start": 33.065,
+   "end": 33.378
+  },
+  {
+   "w": "dès",
+   "start": 33.402,
+   "end": 33.529
+  },
+  {
+   "w": "aujourd’hui",
+   "start": 33.587,
+   "end": 34.04
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "screen": [
+  1320,
+  2112
+ ],
+ "note": "t = seconds in assets/tablet/qcm.mp4 (host tap time + 0.66 s measured from the first UI change)",
+ "events": [
+  {
+   "label": "study",
+   "t": 1.877,
+   "x": 721,
+   "y": 2011
+  },
+  {
+   "label": "mode-qcm",
+   "t": 4.012,
+   "x": 390,
+   "y": 1016
+  },
+  {
+   "label": "answer",
+   "t": 7.452,
+   "x": 975,
+   "y": 1151
+  },
+  {
+   "label": "rate-correct",
+   "t": 9.997,
+   "x": 816,
+   "y": 1990
+  }
+ ],
+ "offset": 0.66
+}
