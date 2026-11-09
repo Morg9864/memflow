@@ -76,7 +76,7 @@ export default function PolitiqueConfidentialitePage() {
           <strong style={{ color: "var(--color-ink)" }}>Données de navigation</strong> — pages visitées, durée de session, provenance du trafic, type d&apos;appareil et localisation approximative, collectées via Google Analytics 4 uniquement après votre consentement.
         </li>
         <li>
-          <strong style={{ color: "var(--color-ink)" }}>Données saisies volontairement</strong> — adresse électronique ou informations transmises via les formulaires de contact ou d&apos;inscription à la démo.
+          <strong style={{ color: "var(--color-ink)" }}>Données saisies volontairement</strong> — adresse électronique ou informations transmises via les formulaires de contact.
         </li>
       </ul>
       <p

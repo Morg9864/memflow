@@ -1,128 +1,46 @@
-const produitLinks = [
-  { label: "Produit", href: "#produit" },
-  { label: "Modes d'étude", href: "#modes" },
-  { label: "Import", href: "#import" },
-  { label: "Statistiques", href: "#stats" },
-];
-
-const appLinks = [
-  { label: "Ouvrir l'app", href: "https://app.memflow.one" },
-  { label: "Lancer la démo", href: "https://demo.memflow.one" },
-];
-
 import Link from "next/link";
+import Image from "next/image";
+import styles from "./footer.module.css";
+
+const productLinks = [
+	{ label: "Produit", href: "#produit" },
+	{ label: "Modes d’étude", href: "#modes" },
+	{ label: "Importer des cartes", href: "#import" },
+	{ label: "Statistiques", href: "#stats" },
+];
 
 const legalLinks = [
-  { label: "Politique de confidentialité", href: "/politique-confidentialite" },
-  { label: "Conditions d'utilisation", href: "/conditions-utilisation" },
-  { label: "Mentions légales", href: "/mentions-legales" },
-  { label: "Politique cookies", href: "/politique-cookies" },
+	{ label: "Confidentialité", href: "/politique-confidentialite" },
+	{ label: "Conditions d’utilisation", href: "/conditions-utilisation" },
+	{ label: "Mentions légales", href: "/mentions-legales" },
+	{ label: "Cookies", href: "/politique-cookies" },
 ];
 
 export function Footer() {
-  return (
-    <footer
-      className="relative mt-24 pt-16 pb-8"
-      style={{ backgroundColor: "var(--color-ink)" }}
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Top row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 pb-12 border-b" style={{ borderColor: "rgba(235,226,214,0.12)" }}>
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
-            <a
-              href="/"
-              className="text-2xl font-bold"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              <span style={{ color: "rgba(250,246,239,0.95)" }}>Mem</span>
-              <span style={{ color: "var(--color-orange)" }}>Flow</span>
-            </a>
-            <p
-              className="text-sm leading-relaxed max-w-[220px]"
-              style={{ color: "rgba(250,246,239,0.5)", fontFamily: "var(--font-sans)" }}
-            >
-              Apprends avec intention.<br />Garde ce qui compte.
-            </p>
-          </div>
-
-          {/* Produit */}
-          <div className="flex flex-col gap-3">
-            <h3
-              className="text-xs font-semibold tracking-widest uppercase mb-1"
-              style={{ color: "rgba(250,246,239,0.35)", fontFamily: "var(--font-sans)" }}
-            >
-              Produit
-            </h3>
-            {produitLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm transition-colors hover:opacity-100"
-                style={{ color: "rgba(250,246,239,0.6)", fontFamily: "var(--font-sans)" }}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Application */}
-          <div className="flex flex-col gap-3">
-            <h3
-              className="text-xs font-semibold tracking-widest uppercase mb-1"
-              style={{ color: "rgba(250,246,239,0.35)", fontFamily: "var(--font-sans)" }}
-            >
-              Application
-            </h3>
-            {appLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm transition-colors hover:opacity-100"
-                style={{ color: "rgba(250,246,239,0.6)", fontFamily: "var(--font-sans)" }}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Légal */}
-          <div className="flex flex-col gap-3">
-            <h3
-              className="text-xs font-semibold tracking-widest uppercase mb-1"
-              style={{ color: "rgba(250,246,239,0.35)", fontFamily: "var(--font-sans)" }}
-            >
-              Légal
-            </h3>
-            {legalLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-sm transition-colors hover:opacity-100"
-                style={{ color: "rgba(250,246,239,0.6)", fontFamily: "var(--font-sans)" }}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom row */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p
-            className="text-xs"
-            style={{ color: "rgba(250,246,239,0.3)", fontFamily: "var(--font-sans)" }}
-          >
-            © 2026 MemFlow
-          </p>
-          <p
-            className="text-xs"
-            style={{ color: "rgba(250,246,239,0.2)", fontFamily: "var(--font-sans)" }}
-          >
-            Fait avec soin pour les apprenants curieux.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
+	return (
+		<footer className={styles.footer}>
+			<div className={styles.footerMain}>
+				<div className={styles.brandBlock}>
+					<Link href="/" className={styles.wordmark} aria-label="Memflow, accueil">
+						<Image className={styles.logo} src="/logo.png" alt="" width={36} height={36} />
+						<span><span>Mem</span><span>flow</span></span>
+					</Link>
+					<p>Des révisions plus régulières, directement sur le web.</p>
+				</div>
+				<div className={styles.linkColumn}>
+					<h2>Memflow</h2>
+					{productLinks.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}
+					<a href="https://app.memflow.one">Ouvrir l’application</a>
+				</div>
+				<div className={styles.linkColumn}>
+					<h2>Informations</h2>
+					{legalLinks.map((link) => <Link href={link.href} key={link.href}>{link.label}</Link>)}
+				</div>
+			</div>
+			<div className={styles.footerBottom}>
+				<span>© 2026 Memflow</span>
+				<span>Conçu pour apprendre un peu chaque jour.</span>
+			</div>
+		</footer>
+	);
 }

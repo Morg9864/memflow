@@ -1,0 +1,18 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "dpr": 2,
+  "duration": 6.066667,
+  "events": [
+    {
+      "label": "glide",
+      "t": 2.789
+    },
+    {
+      "label": "scroll-stats",
+      "t": 4.109
+    }
+  ]
+}
